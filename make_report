@@ -1,9 +1,5 @@
 #!/bin/sh
 
-if [ ! -d "report" ]; then
-    mkdir report
-fi
-
 nbmerge ./notebooks/*.ipynb > /tmp/merged.ipynb
 # templates: base, article, report
 jupyter nbconvert --to pdf --template article /tmp/merged.ipynb --output-dir=report
