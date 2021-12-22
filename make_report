@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ ! -d "report" ]; then
+    mkdir report
+fi
+
+nbmerge *.ipynb > merged.ipynb
+# templates: base, article, report
+jupyter nbconvert --to pdf --template article merged.ipynb --output-dir=report
+rm merged.ipynb
