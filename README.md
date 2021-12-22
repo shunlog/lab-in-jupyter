@@ -33,4 +33,4 @@ pip install nbconvert
 
 The `.ipynb` files go into the `./notebooks/` directory. Don't worry if the outputs have changed after you executed the cells again, git will ignore them. 
 
-For the report, run `make_report` which will generate a pdf in the `./report` directory
+For the report, run `make_report` inside `./notebooks` which will generate a pdf in the `./report` directory

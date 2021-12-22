@@ -1,6 +1,6 @@
 #!/bin/sh
 
-nbmerge ./notebooks/*.ipynb > /tmp/merged.ipynb
+nbmerge *.ipynb > merged.ipynb
 # templates: base, article, report
-jupyter nbconvert --to pdf --template article /tmp/merged.ipynb --output-dir=report
-rm /tmp/merged.ipynb
+jupyter nbconvert --to pdf --template article merged.ipynb --output-dir=../report
+rm merged.ipynb
