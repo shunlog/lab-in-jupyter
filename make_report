@@ -4,7 +4,7 @@ if [ ! -d "report" ]; then
     mkdir report
 fi
 
-nbmerge *.ipynb > merged.ipynb
+nbmerge ./notebooks/*.ipynb > /tmp/merged.ipynb
 # templates: base, article, report
-jupyter nbconvert --to pdf --template article merged.ipynb --output-dir=report
-rm merged.ipynb
+jupyter nbconvert --to pdf --template article /tmp/merged.ipynb --output-dir=report
+rm /tmp/merged.ipynb
