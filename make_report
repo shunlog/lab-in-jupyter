@@ -2,5 +2,8 @@
 
 nbmerge *.ipynb(n) | jupyter nbconvert --execute --to=notebook --stdin --stdout --log-level=ERROR > merged.ipynb
 # templates: base, article, report
-jupyter nbconvert --to pdf --template article merged.ipynb --output-dir=../report
+jupyter nbconvert --to pdf --template article merged.ipynb --output-dir=../tmp/
 rm merged.ipynb
+
+xelatex -quiet -output-directory=../tmp/ ../report/title.tex
+pdftk ../tmp/title.pdf ../tmp/merged.pdf cat output ../tmp/full.pdf
